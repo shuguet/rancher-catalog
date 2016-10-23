@@ -1,0 +1,39 @@
+.catalog:
+  name: "NutanixVolumePlugin"
+  version: "v0.1"
+  description: "Nutanix Volume Plugin"
+  uuid: NutanixVolumePlugin-0
+  minimum_rancher_version: v1.1.4
+  questions:    
+    - variable: prism_ip
+      label: "Prism Endpoint IP"
+      description: "Prism endpoint IP (IP only, no port)"
+      required: true
+      default: "10.21.210.40"
+      type: "string"
+    - variable: dataservices_ip
+      label: "DataServices IP"
+      description: "DataServices IP (IP only, no port)"
+      required: true
+      default: "10.21.210.124"
+      type: "string"
+    - variable: prism_username
+      label: "Prism username"
+      description: "Prism username, usually admin"
+      required: true
+      default: "admin"
+      type: "string"
+    - variable: prism_password
+      label: "Password for Prism"
+      description: "Prism password"
+      required: true
+      type: "password"
+    - variable: default_container
+      label: "Default container"
+      description: "Default container to store Docker volumes on"
+      required: true
+      default: "ahv-ctr1"
+      type: "string"
+
+
+NutanixVolumePlugin:

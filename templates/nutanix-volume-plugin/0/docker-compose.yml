@@ -1,0 +1,31 @@
+NutanixVolumePlugin:
+  labels:
+    io.rancher.scheduler.global: 'true'
+    io.rancher.container.system: NutanixVolumeDriver
+    io.rancher.container.pull_image: always
+  entrypoint:
+  - /code/scripts/docker_run
+  command:
+  - --prism-ip
+  - ${prism_ip}
+  - --dataservices-ip
+  - ${dataservices_ip}
+  - --prism-username
+  - ${prism_username}
+  - --prism-password
+  - ${prism_password}
+  - --default-container
+  - ${default_container}
+  image: orionapps/vol-plugin
+  privileged: true
+  volumes:
+  - /lib/modules:/lib/modules
+  - /dev:/dev
+  - /sbin/multipath:/sbin/multipath
+  - /etc/iscsi:/etc/iscsi
+  - /var/lib/nutanix:/var/lib/nutanix:shared
+  - /var/lock/iscsi:/var/lock/iscsi
+  - /proc:/host/proc
+  - /run/docker/plugins:/run/docker/plugins
+  net: host
+  ipc: host

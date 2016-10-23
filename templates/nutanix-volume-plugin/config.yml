@@ -1,0 +1,5 @@
+name: Nutanix Volume Plugin
+description: |
+  Docker Volume Manager for Nutanix-backed Volumes
+version: v1.0.8
+category: Rancher Services
