@@ -1,6 +1,6 @@
 .catalog:
   name: "NutanixVolumePlugin"
-  version: "v0.1"
+  version: "v1.0.8"
   description: "Nutanix Volume Plugin"
   uuid: NutanixVolumePlugin-0
   minimum_rancher_version: v1.1.4
